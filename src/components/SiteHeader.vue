@@ -1,4 +1,16 @@
 <script setup lang="ts">
+import DownloadButton from '@/components/DownloadButton.vue';
+import { ref } from 'vue';
+
+import { menuNav } from '@/data/Navs';
+import SiteHeaderModeToggle from './SiteHeaderModeToggle.vue';
+import SiteHeaderLogo from './SiteHeaderLogo.vue';
+
+const isMobileMenuOpen = ref<boolean>(false)
+
+const toggleMenu = (): void => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
 </script>
 
 <template>
@@ -6,41 +18,36 @@
   <header>
     <div class="container">
       <div class="header-wrapper">
-        <a href="#" class="logo">
-          <img src="/icon-logo-orange.png" alt="Logo icon" />
-          <span>lightz.js</span>
-        </a>
+        <SiteHeaderLogo />
+
         <!-- Menu -->
-        <nav id="menu">
+        <nav id="menu" :class="{ open: isMobileMenuOpen }">
+          <!-- Nav -->
           <ul>
-            <li>
-              <a href="#">Documentation</a>
-            </li>
-            <li>
-              <a href="#">Github</a>
-            </li>
-            <li>
-              <a href="#">Support</a>
+            <li v-for="item in menuNav" :key="item.label">
+              <a :href="item.url">{{ item.label }}</a>
             </li>
           </ul>
-          <a href="javascript:void(0)" class="toggle-mode menu-icon-btn" data-mode="dark">
-            <i class="fa-solid fa-moon"></i>
-          </a>
-          <a href="javascript:void(0)" class="toggle-mode menu-icon-btn" data-mode="light">
-            <i class="fa-solid fa-sun"></i>
-          </a>
-          <button type="button" class="btn btn-primary">
+
+          <!-- Toggle Dark/Light Mode-->
+          <SiteHeaderModeToggle />
+
+          <!-- Download button -->
+          <DownloadButton>
             Download
-          </button>
+          </DownloadButton>
         </nav>
         <!-- ./Menu -->
+
         <button type="button"
           id="nav-toggle"
           class="menu-icon-btn"
-          aria-expanded="false"
+          :aria-expanded="isMobileMenuOpen ? 'true' : 'false'"
           aria-controls="menu"
-          aria-haspopup="true">
-          <i class="fa-solid fa-bars"></i>
+          aria-haspopup="true"
+          @click="toggleMenu()"
+        >
+          <fa-icon :icon="`fa-solid ${isMobileMenuOpen ? 'fa-x' : 'fa-bars'}`" fixed-width />
         </button>
       </div>
     </div>

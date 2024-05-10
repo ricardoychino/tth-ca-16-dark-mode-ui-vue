@@ -96,7 +96,7 @@ section, footer {
 
 /*
 ================================
-Structure rules 
+Structure rules
 ================================
 */
 /* Header ------------------- */
@@ -239,7 +239,7 @@ Structure rules
   }
 /*
 ================================
-Layout Mode-related rules 
+Layout Mode-related rules
 ================================
 */
   /* General */
@@ -247,7 +247,7 @@ Layout Mode-related rules
     color: var(--text-primary-light);
   }
   .dark {
-    color: var(--text-primary-dark); 
+    color: var(--text-primary-dark);
   }
   .light p {
     color: var(--text-secondary-light);
@@ -258,10 +258,12 @@ Layout Mode-related rules
   .light .btn-primary {
     color: #FFFFFF;
     background-color: var(--primary-light);
+    border-color: var(--primary-light);
   }
   .dark .btn-primary {
     color: var(--text-primary-light);;
     background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
   }
   .light .section-heading {
     color: inherit;
@@ -361,7 +363,7 @@ Layout Mode-related rules
   .light .feature-item i {
     color: var(--feature-border-light)
   }
-  .dark .feature-item i {
+  .dark .feature-item i, .dark .feature-item svg {
     color: var(--feature-border-dark)
   }
   /* Fallback as mentioned here: https://bootcamp.uxdesign.cc/gradient-text-in-css-609068d3f953 */
