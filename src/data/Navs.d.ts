@@ -2,7 +2,7 @@ import type { Nav } from '@/types/Site'
 
 const menuNav: Nav = [
   { label: 'Documentation', url: '#' },
-  { label: 'Github', url: '#' },
+  { label: 'Github', url: 'https://github.com/ricardoychino/tth-ca-16-dark-mode-ui-vue' },
   { label: 'Support', url: '#' },
 ]
 
