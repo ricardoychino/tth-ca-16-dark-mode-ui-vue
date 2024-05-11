@@ -1,3 +1,7 @@
+### Vue.js version of the project
+
+#### Original description from Team Treehouse:
+
 A UI with a Dark and Light Modes is an HTML and CSS-heavy code adventure with a very small amount of JavaScript to toggle the light and dark modes respectively.
 
 
