@@ -1,18 +1,10 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue';
-import { useDark, useToggle } from '@vueuse/core';
 import moon from '@/components/icons/moon.vue';
 import sun from '@/components/icons/sun.vue';
 
-const isDark = useDark({
-  selector: 'body',
-  attribute: 'class',
-  valueDark: 'dark',
-  valueLight: 'light'
-})
+import { useDarkMode } from '@/composables/useDarkMode'
 
-const toggleDark = useToggle(isDark)
-
+const { isDark, toggleDark } = useDarkMode()
 </script>
 
 <template>
@@ -23,3 +15,9 @@ const toggleDark = useToggle(isDark)
     <component :is="isDark ? sun : moon" fixed-width />
   </a>
 </template>
+
+<style lang="scss" scoped>
+a:hover {
+  color: $primary;
+}
+</style>

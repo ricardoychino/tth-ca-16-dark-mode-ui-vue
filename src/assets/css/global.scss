@@ -1,0 +1,49 @@
+@import "_variables";
+
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/mixins/_breakpoints';
+
+@mixin base-padding {
+  padding: 60px 0;
+}
+
+@mixin no-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@mixin header-color {
+  color: $nav-color;
+  background-color: $nav-bg;
+}
+
+/*
+================================
+Layout Mode-related rules
+================================
+*/
+[data-theme="dark"] {
+  --primary-color: #{$primary-dark};
+  --text-color: #{$text-primary-dark};
+  --paragraph-color: #{$text-secondary-dark};
+  --background-color: #{$hero-bg-dark};
+  --features-background-color: #{$features-bg-dark};
+  --feature-item-color: #{$feature-item-dark};
+  --hero-highligh-start: #{$primary-dark};
+  --hero-highligh-end: #FFFFFF;
+  --section-title-start: #{$primary-dark};
+  --section-title-end: #FFFFFF;
+}
+[data-theme="light"] {
+  --primary-color: #{$primary-light};
+  --text-color: #{$text-primary-light};
+  --paragraph-color: #{$text-secondary-light};
+  --background-color: #{$hero-bg-light};
+  --features-background-color: #{$features-bg-light};
+  --feature-item-color: #{$feature-item-light};
+  --hero-highligh-start: #{$primary-light};
+  --hero-highligh-end: #{$primary-light};
+  --section-title-start: #{$text-primary-light};
+  --section-title-end: #{$text-primary-light};
+}

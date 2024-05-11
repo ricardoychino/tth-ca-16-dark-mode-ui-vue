@@ -6,6 +6,8 @@ import App from './App.vue'
 
 library.add(fas)
 
+import '@/assets/css/style.scss'
+
 createApp(App)
 .component('fa-icon', FontAwesomeIcon)
 .mount('#app')

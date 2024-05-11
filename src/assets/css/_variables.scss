@@ -1,0 +1,19 @@
+/* Color palette */
+  $primary: #FEB34F;
+  $nav-color: #A5B4BC;
+  $nav-bg: #24282B;
+  $footer-bg: #24282B;
+  /* Dark mode */
+  $primary-dark: $primary;
+  $text-primary-dark: #FFFFFF;
+  $text-secondary-dark: #A5B4BC;
+  $hero-bg-dark: #343A3D;
+  $features-bg-dark: #3D4346;
+  $feature-item-dark: $primary-dark;
+  /* Light mode - Default */
+  $primary-light: $primary;
+  $text-primary-light: #505961;
+  $text-secondary-light: #505961;
+  $hero-bg-light: #F9F9FA;
+  $features-bg-light: #E1E2E4;
+  $feature-item-light: #A5B4BC;

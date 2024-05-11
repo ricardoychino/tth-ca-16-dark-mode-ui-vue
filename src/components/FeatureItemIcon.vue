@@ -11,5 +11,5 @@ const IconComponent = defineAsyncComponent(() => import(`@/components/icons/${pr
 </script>
 
 <template>
-  <component :is="IconComponent" />
+  <component :is="IconComponent" size="xl"/>
 </template>
